@@ -1,3 +1,5 @@
+console.log('heye')
+
 const arrayOfStudents = [];
 
 const hideJumbo = () => {
