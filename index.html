@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
-    <title>Hogwart's Sorting Hat</title>
+    <title>Hogwarts Sorting Hat!</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <div class="jumbotron" id="myJumbo" href=#studentName>
-        <h1 class="display-4">Hoggy Howarts</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <div id="myJumbo" class="jumbotron">
+        <h1 class="display-4">Welcome to Hoggy Hoggy Warts!</h1>
+        <p class="lead">ggekkkfjshfjsdhfjhfjsimple jumbotron-style component for calling extra attention to featured content or information.</p>
         <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" role="button" id="startSorting">Start sorting!</a>
-      </div>
-      <form>
-        <div class="invisible" id="studentName">
-            <div class="form-group">
-              <label for="studentName">Student Name</label>
-              <input type="text" class="form-control" id="firstYearsName" aria-describedby="emailHelp" placeholder="Enter your name!">
-            </div>
-            <button type="submit" class="btn btn-primary" id="sortButton">Sort!</button>
-        </div>    
-      </form>
-      <div class="studentCards">
-          
-      </div>
+        <button id="startSorting" href=#studentForm class="btn btn-primary" type="button">
+            Let's Start Sorting
+        </button>
+        </div>
+        <div id="studentForm" class="invisible">
+            <form>
+                <div class="form-group">
+                  <label for="firstYearsName">Enter First Year's Name: </label>
+                  <input type="text" class="form-control" id="firstYearsName" aria-describedby="studentName" placeholder="Enter name">
+                </div>
+            </form>
+            <button id="sortButton" type="submit" href=#allStudents class="btn btn-primary">Sort!</button>
+            <button type="reset" class="btn btn-primary" id="resetButton">Reset</button>
+
+        </div>
+         <div id="allStudents">
 
 
-      
-
-    
-    <script src="main.js"></script>
+         </div>
+        
+    <script src="./main.js"></script>   
 </body>
 </html>

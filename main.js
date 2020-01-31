@@ -1,60 +1,71 @@
-console.log('hello')
-
-const arrOfStudents = [
-];
-
-const arrOfHouses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+const arrayOfStudents = [];
 
 const hideJumbo = () => {
-    document.getElementById('myJumbo').classList.add('invisible')
-    document.getElementById('studentName').classList.remove('invisible')
-}
-
+    document.getElementById('myJumbo').classList.add('invisible');
+    document.getElementById('studentForm').classList.remove('invisible');
+};
 document.getElementById('startSorting').addEventListener('click', hideJumbo);
 
-const choseHouse = () => {
-    let randomHouse = arrOfHouses[Math.floor(Math.random() * arrOfHouses.length)];
-    return randomHouse;
-}
 
-const makeId = () => {
-    let length = 4;
-    let result           = '';
-    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;  
+
+let objId = 0;
+
+const createIdForObject = (obj) => {
+   if (obj.id == null) {
+       obj.id = objId++
+   }
+   return obj.id;
 }
+ 
+const generateStudent = () => {
+    document.getElementById('studentForm').reset;
+    let student = document.getElementById('firstYearsName').value;
+    let arrOfHouses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
+    let randomHouse = arrOfHouses[Math.floor(Math.random() * arrOfHouses.length)];
+
+    arrayOfStudents.push(person = {name: student, house: randomHouse});
+    createIdForObject(person);
+    console.log(arrayOfStudents);
+    studentPrinter(arrayOfStudents);
+    
+
+};
+
+
+document.getElementById('sortButton').addEventListener('click', generateStudent);
+
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint
-  };
-  const studentPrinter = () => {
+};
+const studentPrinter = (sortedStudents) => {
     let domString = '';
-    for(let i = 0; i< arrOfStudents.length; i++){
-      domString += '<div class="col-md-6 col-lg-4 card-separation">'
-      domString += '<div class="card">';
-      domString += '  <div class="card-body">';
-      domString += `    <h5 class="card-title">${arrOfStudents[i].name}</h5>`;
-      domString += `    <p class="card-text">${arrOfStudents[i].house}</p>`;
-      domString += `<button type="button" id="${arrOfStudents[i].randomId}" class="btn btn-light">Expel</button>`
-      domString += '  </div>';
-      domString += '</div>';
-      domString += '</div>';
-    }
-    printToDom('studentCards', domString);
+        for(let i = 0; i< sortedStudents.length; i++){
+          domString += '<div class="row">'
+          domString += '  <div class="col-sm-6">';
+          domString += '      <div class="card text-center">'
+          domString += '        <div class="card-body">';
+          domString += `            <h5 class="card-title">${sortedStudents[i].name}</h5>`;
+          domString += `            <p class="card-text">${sortedStudents[i].house}</p>`;
+          domString += `            <button type="button" id="${sortedStudents[i].id}" class="btn btn-light">Expel</button>`
+          domString += '         </div>';
+          domString += '      </div>';
+          domString += '   </div>';
+          domString += '</div>'
+        };
+        
+    console.log(domString);
+    printToDom('allStudents', domString);
+
+   let getbutton = document.getElementsByClassName("btn btn-light")[0]
+   getbutton.addEventListener('click', expelStudent);
+   console.log(getbutton);
+
+};
+
+const expelStudent = () => {
+    console.log('clicked')
+    arrayOfStudents.splice(0, 1)
+    document.getElementById('allStudents').classList.add('invisible');
 }
-
-
-const sortStudent = () => {
-    
-    let student = document.getElementById('firstYearsName').value;
- //   document.getElementById('studentName').reset;
-    arrOfStudents.push({name: student, house: choseHouse(), randomId: makeId()});
-    console.log(arrOfStudents)
-    studentPrinter();
-}
-
-document.getElementById('sortButton').addEventListener('click', sortStudent)
