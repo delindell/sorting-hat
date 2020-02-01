@@ -8,8 +8,14 @@ body {
     justify-content: center;
 }
 
-form {
+#studentForm {
     margin: 1%;
+    max-width: 80%;
+    border: solid black 2px;
 
 }
 
+.jumbotron {
+    margin: 10px;
+    text-align: center;
+}
