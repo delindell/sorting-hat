@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hogwarts Sorting Hat!</title>
     <link rel="stylesheet" href="./main.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -26,12 +27,14 @@
                
                   <h3>Enter First Year's Name!</h3>
                 <div class="form-group d-flex flex-row justify-content-center">
-                  <label for="firstYearsName"></label><strong>Student</strong>:             </label>
-                  <input type="text" class="form-control d-flex justify-content-center" id="firstYearsName" aria-describedby="studentName" placeholder="Enter name">
+                  <input type="text" class="form-control d-flex justify-content-center text-align-center" id="firstYearsName" aria-describedby="studentName" placeholder="Enter name">
                 </div>
             </form>
-            <button id="sortButton" type="submit" href=#allStudents class="btn btn-primary d-flex justify-content-center">Sort!</button>
+            <div class="d-flex justify-content-center">
+                <button id="sortButton" type="submit" href=#allStudents class="btn btn-danger">Sort!</button>
+            </div>
         </div>
+
         <div id="allStudents" class="d-flex flex-wrap justify-content-center">
 
 
