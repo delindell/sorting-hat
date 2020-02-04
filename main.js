@@ -15,13 +15,18 @@ const createIdForObject = (obj) => {
 };
 
 const generateStudent = () => {
-    let student = document.getElementById('firstYearsName').value;
-    let arrOfHouses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
-    let randomHouse = arrOfHouses[Math.floor(Math.random() * arrOfHouses.length)];
-    arrayOfStudents.push(person = {name: student, house: randomHouse});
-    createIdForObject(person);
-    console.log(arrayOfStudents);
-    studentPrinter(arrayOfStudents);
+    let student = document.getElementById('firstYearsName').value;   
+        if (student.length == '') {
+            alert('Enter your name please')
+            return false;
+        } else {
+            let arrOfHouses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
+            let randomHouse = arrOfHouses[Math.floor(Math.random() * arrOfHouses.length)];
+            arrayOfStudents.push(person = {name: student, house: randomHouse});
+            createIdForObject(person);
+            console.log(arrayOfStudents);
+            studentPrinter(arrayOfStudents);  
+        };
 };
 
 const printToDom = (divId, textToPrint) => {
@@ -35,22 +40,22 @@ const studentPrinter = (sortedStudents) => {
         for(let i = 0; i < sortedStudents.length; i++){
           domString += '  <div id="cardMargin" class="col-sm-6 col-lg-4">';
           if(sortedStudents[i].house === 'Gryffindor'){
-            domString += '        <div class="card text-center bg-light mb-3">';
+            domString += '      <div class="card text-center bg-light mb-3">';
           }
           else if (sortedStudents[i].house === 'Hufflepuff'){
-            domString += '        <div class="card text-center bg-warning mb-3">';
+            domString += '      <div class="card text-center bg-warning mb-3">';
           } 
           else if (sortedStudents[i].house === 'Ravenclaw'){
-            domString += '        <div class="card text-center bg-success mb-3">';
+            domString += '      <div class="card text-center bg-success mb-3">';
           } 
           else if (sortedStudents[i].house === 'Slytherin'){
-            domString += '        <div class="card text-center text-white bg-dark mb-3">';
+            domString += '      <div class="card text-center text-white bg-dark mb-3">';
           };
           domString += '      <div class="card-body>'
-          domString += `            <h4 class="card-title"><span>${sortedStudents[i].name}</span></h4>`;
-          domString += `            <h5 class="card-text">${sortedStudents[i].house}</h5>`;
-          domString += `            <button type="button" id="${sortedStudents[i].id}" class="expelButton" class="btn btn-light">Expel</button>`;
-          domString += '         </div>';
+          domString += `          <h3 class="card-title"><span>${sortedStudents[i].name}</span></h3>`;
+          domString += `          <h5 class="card-text">${sortedStudents[i].house}</h5>`;
+          domString += `          <button type="button" id="${sortedStudents[i].id}" class="expelButton" class="btn btn-light">Expel</button>`;
+          domString += '       </div>';
           domString += '      </div>';
           domString += '   </div>';
         };

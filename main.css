@@ -1,6 +1,7 @@
 body {
     background-color: lemonchiffon;
-    font-family: monospace;
+    
+
 
 }
 
@@ -15,18 +16,21 @@ body {
     margin-left: 50px;
     max-width: 1000px;
     text-align: center;
-    border: black solid 1px;
-    padding: 18px
+    border: grey solid 0.5px;
+    padding: 18px;
+    font-family: 'Indie Flower', cursive;
+    border-radius: 5%;
 
 }
 
 .jumbotron {
     margin: 10px;
     text-align: center;
-
+    font-family: 'Indie Flower', cursive;
 }
 
 .card {
     padding: 5px;
+    font-family: 'Indie Flower', cursive;
 }
 
