@@ -34,8 +34,20 @@ const studentPrinter = (sortedStudents) => {
     let domString = '';
         for(let i = 0; i < sortedStudents.length; i++){
           domString += '  <div id="cardMargin" class="col-sm-6 col-lg-4">';
-          domString += '      <div class="card text-center">';
-          domString += '        <div class="card-body">';
+          if(sortedStudents[i].house === 'Gryffindor'){
+            domString += '        <div class="card text-center bg-light mb-3">';
+          }
+          else if (sortedStudents[i].house === 'Hufflepuff'){
+            domString += '        <div class="card text-center bg-warning mb-3">';
+          } 
+          else if (sortedStudents[i].house === 'Ravenclaw'){
+            domString += '        <div class="card text-center bg-success mb-3">';
+          } 
+          else if (sortedStudents[i].house === 'Slytherin'){
+            domString += '        <div class="card text-center text-white bg-dark mb-3">';
+          };
+          
+          domString += '      <div class="card-body>'
           domString += `            <h5 class="card-title">${sortedStudents[i].name}</h5>`;
           domString += `            <p class="card-text">${sortedStudents[i].house}</p>`;
           domString += `            <button type="button" id="${sortedStudents[i].id}" class="expelButton" class="btn btn-light">Expel</button>`;

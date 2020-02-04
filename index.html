@@ -9,29 +9,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container d-flex flex-column justify-content-center">
     <div id="myJumbo" class="jumbotron">
         <h1 class="display-4">Welcome to Hoggy Hoggy Warts!</h1>
-        <p class="lead">ggekkkfjshfjsdhfjhfjsimple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <p class="lead">Prepare for Hoggwart's First Year! Here you the magic hat will decide which house you will belong to for the reset of your
+            time here at Hoggwart's (for better or worse). Hopefully it makes the right decision!
+        </p>
         <hr class="my-4">
-        <p>It uses utility classes for typogasfdasfddsfascing to space content out within the larger container.</p>
+        <p>Each one of the four houses has their own special focuses and leaders who you will get to know very well during your tenure here.</p>
         <button id="startSorting" href=#studentForm class="btn btn-primary" type="button">
             Let's Start Sorting
         </button>
         </div>
         <div id="studentForm" class="invisible">
             <form>
-                <div class="form-group">
-                  <label for="firstYearsName" class="d-flex justify-content-start">Enter First Year's Name: </label>
+               
+                  <h3>Enter First Year's Name!</h3>
+                <div class="form-group d-flex flex-row justify-content-center">
+                  <label for="firstYearsName"></label><strong>Student</strong>:             </label>
                   <input type="text" class="form-control d-flex justify-content-center" id="firstYearsName" aria-describedby="studentName" placeholder="Enter name">
                 </div>
             </form>
-            <button id="sortButton" type="submit" href=#allStudents class="btn btn-primary d-flex justify-content-end">Sort!</button>
+            <button id="sortButton" type="submit" href=#allStudents class="btn btn-primary d-flex justify-content-center">Sort!</button>
         </div>
         <div id="allStudents" class="d-flex flex-wrap justify-content-center">
 
 
         </div>
-        
+    </div>
     <script src="./main.js"></script>   
 </body>
 </html>

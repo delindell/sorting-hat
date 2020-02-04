@@ -9,13 +9,19 @@ body {
 }
 
 #studentForm {
-    margin: 1%;
-    max-width: 80%;
-    border: solid black 2px;
+    margin-left: 50px;
+    max-width: 1000px;
+    text-align: center;
+    border: black solid 1px;
+    padding: 10px;
 
 }
 
 .jumbotron {
     margin: 10px;
     text-align: center;
+}
+
+.card {
+    padding: 5px;
 }
