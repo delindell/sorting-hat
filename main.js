@@ -10,7 +10,7 @@ const hideJumbo = () => {
 const createIdForObject = (obj) => {
    if (obj.id == null) {
        obj.id = 'student' + objId++
-   }
+   };
    return obj.id;
 };
 
